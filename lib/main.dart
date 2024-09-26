@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:marcas/estado.dart';
+import 'package:marcas/telas/detalhes.dart';
+import 'package:marcas/telas/produtos.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -38,6 +40,11 @@ class _EstadoTelaPrincipal extends State<TelaPrincipal> {
     estadoApp = context.watch<Estado>();
 
     Widget tela = const SizedBox.shrink();
+    if(estadoApp.mostrandoProdutos()) {
+      tela = const Produtos();
+    } else if (estadoApp.mostrandoDetalhes()) {
+      tela = const Detalhes();
+    }
     return tela;
   }
 }
