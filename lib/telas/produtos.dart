@@ -14,10 +14,15 @@ class Produtos extends StatefulWidget{
   }
 }
 
+const int tamanhoDaPagina = 4;
+
   class _EstadoProdutos extends State<Produtos>{
     late dynamic _feedDeProdutos;
     bool _carregando = false;
     List<dynamic> _produtos = [];
+
+    int _proximaPagina = 1;
+
 
     Future<void> lerFeedEstatico() async {
       final String resposta = 
@@ -34,6 +39,8 @@ class Produtos extends StatefulWidget{
       setState((){
         _carregando = true;
       });
+
+    final totalDeProdutosParaCArregar = _proximaPagina * tamanhoDaPagina;
 
     setState((){
         _carregando = false;
