@@ -42,10 +42,15 @@ const int tamanhoDaPagina = 4;
 
     final totalDeProdutosParaCArregar = _proximaPagina * tamanhoDaPagina;
 
-    setState((){
-        _carregando = false;
+    if(_feedDeProdutos["produtos"].lenght >= totalDeProdutosParaCArregar) {
+      _produtos = 
+      _feedDeProdutos["produtos"].sublist(0, totalDeProdutosParaCArregar);
+    }
 
-      });
+    setState((){
+      _carregando = false;
+      _proximaPagina = _proximaPagina++;
+    });
 
     }
 
