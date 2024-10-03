@@ -23,16 +23,18 @@ const int tamanhoDaPagina = 4;
 
     int _proximaPagina = 1;
 
+    @override
+    void initState() {
+      super.initState();
+      
+      _lerFeedEstatico();
+    }
 
-    Future<void> lerFeedEstatico() async {
+    Future<void> _lerFeedEstatico() async {
       final String resposta = 
         await rootBundle.loadString('lib/resources/jsons/feed.json');
         _feedDeProdutos = await jsonDecode(resposta);
-
-      setState((){
         _carregarProdutos();
-
-      });
     }  
 
     void _carregarProdutos(){
