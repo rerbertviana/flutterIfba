@@ -58,9 +58,9 @@ const int tamanhoDaPagina = 4;
 
     @override
     Widget build(BuildContext context){
-      return Column(
+      return _carregando? const Center(child: CircularProgressIndicator()): Column(
         children:[
-          const Text("lista de produtos aqui"),
+          Text("${_produtos.length}"),
           FloatingActionButton(
             child: const Text("detalhes"),
             onPressed: ()=> {estadoApp.mostrarDetalhes()})        
