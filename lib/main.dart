@@ -13,14 +13,20 @@ class Marcas extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return ChangeNotifierProvider(
+    create: (_) => Estado(),
+    child: MaterialApp(
       title: 'Melhores Marcas',
       theme: ThemeData(
         colorScheme: const ColorScheme.light(),
         useMaterial3: true,
+        floatingActionButtonTheme: const 
+        FloatingActionButtonThemeData(
+          backgroundColor: Colors.blueGrey
+        )
       ),
       home: const TelaPrincipal(title: 'Flutter Demo Home Page'),
-    );
+    ));
   }
 }
 

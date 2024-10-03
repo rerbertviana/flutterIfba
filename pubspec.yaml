@@ -18,3 +18,10 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+
+  assets:
+    - lib/resources/jsons/feed.json
+    - lib/resources/jsons/comentarios.json
+    - lib/resources/images/avatar.png
+    - lib/resources/images/produtos.jpeg
+
